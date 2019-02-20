@@ -16,7 +16,7 @@ void setup() // Subrutina de configuracion
   
 }
 
-char orden; // Para Caracteres
+int orden; // 
 
 void loop() 
 {
