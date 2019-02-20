@@ -3,8 +3,8 @@
 #include <Servo.h>//Libreria
 Servo servoDerecho; //Crea Objeto Clase servoDerecho y servoIzquierdo
 Servo servoIzquierdo;
-#define TX 3;
-#define RX 2;
+#define TX (3)
+#define RX (2)
 SoftwareSerial BT(RX,TX);
 void setup() // Subrutina de configuracion
 {
@@ -16,7 +16,7 @@ void setup() // Subrutina de configuracion
   
 }
 
-char orden; // Para Caracteres
+int orden; // Para Caracteres
 
 void loop() 
 {
@@ -51,5 +51,10 @@ void loop()
       servoIzquierdo.write(90);
       break;
     }
+  } else
+  {
+servoDerecho.write(90);
+      servoIzquierdo.write(90);
+    
   }
 }
