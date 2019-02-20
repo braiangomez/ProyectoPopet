@@ -26,27 +26,33 @@ void loop()
   if (BT.available()>0){
     orden=BT.read();
     BT.println(orden);
-  }
+  
+
+  
     switch(orden)//Sentencia switch instruccion para decisiones multiples
     {
       case 'w': //movimiento hacia adelante.
       servoDerecho.write(0); //Angulo definido por el argumento () al servo Dc
       servoIzquierdo.write(180);
+      delay(1000);
       break;
 
       case 's':
       servoDerecho.write(180); //movimiento hacia atras.
       servoIzquierdo.write(0);
+      delay(1000);
       break;
 
       case 'd': //movimiento hacia la derecha.
       servoDerecho.write(0);
       servoIzquierdo.write(90);
+      delay(1000);
       break;
 
       case 'a': //movimiento hacia la izquierda.
       servoDerecho.write(90);
       servoIzquierdo.write(0);
+      delay(1000);  
       break;
 
       case 'p': //detiene el robot.
@@ -54,9 +60,8 @@ void loop()
       servoIzquierdo.write(90);
       break;
     }
-  }else {
- servoDerecho.write(90);
+  } else {
+     servoDerecho.write(90);
       servoIzquierdo.write(90);
   }
-
 }
