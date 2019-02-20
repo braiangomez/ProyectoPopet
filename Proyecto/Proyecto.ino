@@ -3,8 +3,8 @@
 #include <Servo.h>//Libreria
 Servo servoDerecho; //Crea Objeto Clase servoDerecho y servoIzquierdo
 Servo servoIzquierdo;
-#define TX 3;
-#define RX 2;
+#define TX 3 //Sin ;
+#define RX 2
 SoftwareSerial BT(RX,TX);
 void setup() // Subrutina de configuracion
 {
