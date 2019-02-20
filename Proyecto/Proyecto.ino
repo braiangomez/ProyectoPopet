@@ -1,35 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-void setup() {
-  
-}
-
-
-
-char  orden;
-void loop() 
-{
-  
-  
-}
-
-
-
-
-
-
-
-
-
 #include <SoftwareSerial.h> // Libreria Bt
 #include <Servo.h>//Libreria
 Servo servoDerecho; //Crea Objeto Clase servoDerecho y servoIzquierdo
@@ -57,27 +26,27 @@ void loop()
     BT.println(orden);// Transmision por el puerto serial al monitor arduino
     switch(orden)//Sentencia switch instruccion para decisiones multiples
     {
-      case 'w': case 'W': //movimiento hacia adelante.
+      case '1': //movimiento hacia adelante.
       servoDerecho.write(0); //Angulo definido por el argumento () al servo Dc
       servoIzquierdo.write(180);
       break;
 
-      case 's': case'S':
+      case '2':
       servoDerecho.write(180); //movimiento hacia atras.
       servoIzquierdo.write(0);
       break;
 
-      case 'd': case 'D': //movimiento hacia la derecha.
+      case '3': //movimiento hacia la derecha.
       servoDerecho.write(0);
       servoIzquierdo.write(90);
       break;
 
-      case 'a': case 'A': //movimiento hacia la izquierda.
+      case '4': //movimiento hacia la izquierda.
       servoDerecho.write(90);
       servoIzquierdo.write(0);
       break;
 
-      case 'p': case 'P': //detiene el robot.
+      case '5': //detiene el robot.
       servoDerecho.write(90);
       servoIzquierdo.write(90);
       break;
