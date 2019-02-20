@@ -51,5 +51,9 @@ void loop()
       servoIzquierdo.write(90);
       break;
     }
+  }else {
+ servoDerecho.write(90);
+      servoIzquierdo.write(90);
   }
+
 }
