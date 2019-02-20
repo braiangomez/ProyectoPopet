@@ -1,23 +1,61 @@
+
+
+
+
+
+
+
+
+
+
+
+void setup() {
+  
+}
+
+
+
+char  orden;
+void loop() 
+{
+  
+  
+}
+
+
+
+
+
+
+
+
+
+#include <SoftwareSerial.h> // Libreria Bt
 #include <Servo.h>//Libreria
 Servo servoDerecho; //Crea Objeto Clase servoDerecho y servoIzquierdo
 Servo servoIzquierdo;
-
+#define TX 3;
+#define RX 2;
+SoftwareSerial BT(RX,TX);
 void setup() // Subrutina de configuracion
 {
+  Serial.begin(9600); //Velocidad Comuicacion serial USB pin 0 y 1
+  BT.begin(9600);// Velocidad del puerto serial por software pin 2 y 3
   servoDerecho.attach(7); //configuracion pines
   servoIzquierdo.attach(8);
-  Serial.begin (9600); //Comuicacion Pc Arduino
+
+  
 }
 
 char orden; // Para Caracteres
 
 void loop() 
 {
-  if(Serial.available()>0)
+  if(BT.available()>0) //¿Dato disponible en puerto serial BT?
   {
-    orden=Serial.read();
-    Serial.println(orden);
-    switch(orden)//Sentenci switch instruccion para decisiones multiples
+    orden=BT.read(); //lectura del puerto serial BT
+    BT.println(orden);// Transmision por el puerto serial al monitor arduino
+    switch(orden)//Sentencia switch instruccion para decisiones multiples
     {
       case 'w': case 'W': //movimiento hacia adelante.
       servoDerecho.write(0); //Angulo definido por el argumento () al servo Dc
