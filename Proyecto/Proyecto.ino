@@ -15,7 +15,7 @@ void setup() // Subrutina de configuracion
   servoIzquierdo.attach(8);
   BT.begin(9600);// Velocidad del puerto serial por software pin 2 y 3
 }
-char orden,resp;
+char orden,resp='h';
 
 
 void loop() 
@@ -69,12 +69,12 @@ void loop()
       do{
       servoDerecho.write(0);
       servoIzquierdo.write(90);
-      delay(100);
+      delay(1000);
       servoDerecho.write(90);
       servoIzquierdo.write(0);
-      delay(100);
+      delay(1000);
       }
-     while(resp!=h);
+     while(resp='h');
       break;
       
     }
